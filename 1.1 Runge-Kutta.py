@@ -1,3 +1,5 @@
+#This is a series of functions based on the first listing in the book, exploring
+#Runge-Kutta integration techniques and comparing them to a euler integration
 import numpy as np
 import matplotlib.pyplot as plt
 #y'' = wx - w**2y
