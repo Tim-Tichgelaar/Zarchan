@@ -1,10 +1,13 @@
+#Simple 2D engagement for a perfect Prop-Nav Missile
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 
 #Setup
 Vm, Vt, XNt, HEDEG, XNP, Tau = 1500, 1000, 96.6, -0, 4, 1
+#Velocity of Missile and target, target acceleration, heading error (degrees), effective navigation ratio, and Time constant (unused)
 Rm1, Rm2, Rt1, Rt2 = 0, 8500,10000,10000
+#X and Y locations of missile and target
 XNclim = 966
 Beta = 1 * np.pi
 Vt1 = Vt* np.cos(np.pi - Beta); Vt2 = Vt * np.sin(Beta)
@@ -20,6 +23,7 @@ Vtm1 = Vt1 - Vm1; Vtm2 = Vt2 - Vm2
 Vc = -(Rtm1*Vtm1 + Rtm2*Vtm2)/Rtm
 
 #additional maneuver
+    #optionally choose a parameterized maneuver
 def XNt(T,G,P):
     return 32.2*G*(np.cos(np.pi/P * T)**1)
     #if (T//(2*P)) > (P/2): return G*32.2
@@ -138,7 +142,8 @@ Time.append(T)
 XNcData.append(XNc/32.2)
 #XNcData.append(XNc/32.2)
 Miss_Distance = RtmP
-print(Miss_Distance)
+print('Miss = ', Miss_Distance, '(Ft)')
+print('       ', Miss_Distance*12, '(In)')
 tF = Time[-1]
 '''
 plt.plot(Rm1K,Rm2K,'b-', label='Missile')
@@ -163,7 +168,9 @@ ax1.set_aspect('equal', adjustable='box')
 ax2.plot(Time,XNcData,'k-')
 ax2.set(xlabel=('Time (S)'),ylabel=('''Acceleration (G's)'''))
 
-fig.tight_layout()
 fig.suptitle('''Pure Prop-Nav Simulation''')
+figManager = plt.get_current_fig_manager()
+figManager.window.showMaximized()
+fig.set_tight_layout(True)
 plt.show()
 
