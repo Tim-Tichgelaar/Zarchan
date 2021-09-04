@@ -1,5 +1,6 @@
 Listing 2.1 represents a basic runge kutta simulation of a pure pro-nav missile with perfect information.
 The simulation integrates the proportional navigation equation and target position to see how the missile interact with target maneuvers.
+The basic intent here is to demonstrate the effectiveness of the Pro-Nav algorithm before exploring why exactly it works, as well as to see how it responds to different sources of error
 
 The parameters are labeled within and can be changed by adjusting the data at the beggining of the script.
 
