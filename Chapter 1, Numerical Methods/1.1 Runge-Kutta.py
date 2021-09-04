@@ -1,3 +1,5 @@
+#This is a series of functions based on the first listing in the book, exploring
+#Runge-Kutta integration techniques and comparing them to a euler integration
 import numpy as np
 import matplotlib.pyplot as plt
 #y'' = wx - w**2y
@@ -149,6 +151,6 @@ def error(H1,H2,H3):
     plt.plot(t,(np.array(E)/.05*100),Label=('RK'+str(H3)))
     plt.legend(loc='best')
     plt.show()
-plot(.001,.001,.001)
+error(.001,.01,.001)
 
 #RungeKutta(20,0,1,.1,0,0,1,.01)
