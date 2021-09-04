@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 #Setup
 Vc, XNt, Y, Vm, HEDEG, TF, XNP = 4000, 0, 0, 3000, -20, 10, 4
+#Closing Velocity, Target Maneuver, Vertical Separation, Heading angle (Degrees), Flight Time, Maneuvering constant
 YD = -Vm*HEDEG/57.3
 T=0;S=0
 H=.01

@@ -1,0 +1,15 @@
+Listing 1.1 is a sample Runge-Kutta second order integration; the python script has both the original and some related functions to graph both the results and thier errors.
+
+The Integrator Functions take the arguments (W,T,Tf,Sc,Y,YD,X,H), where
+					       W = Omega, the angular rate of the function
+					       T = The starting time
+					       Tf= The simulation stop time
+					       Sc= The data recording timestep, a new point is written every Sc seconds
+					       Y = initial Y value
+					       YD= initial slope
+					       X = X value from equation
+					       H = Timestep
+
+The Error and Plotting Functions take only (H1, H2, H3), the integration timesteps comparing between Euler and Runge Kutta integrations
+
+As it is listed, a simple error comparison graph is set up
