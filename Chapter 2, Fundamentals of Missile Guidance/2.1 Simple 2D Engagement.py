@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 
 #Setup
-Vm, Vt, XNt, HEDEG, XNP, Tau = 1500, 1000, 96.6, -0, 4, 1
+Vm, Vt, XNt, HEDEG, XNP, Tau = 4000, 1000, 96.6, -0, 4, 1
 #Velocity of Missile and target, target acceleration, heading error (degrees), effective navigation ratio, and Time constant (unused)
-Rm1, Rm2, Rt1, Rt2 = 0, 8500,10000,10000
+Rm1, Rm2, Rt1, Rt2 = 0, 10000,40000,10000
 #X and Y locations of missile and target
 XNclim = 966
 Beta = 1 * np.pi
@@ -24,8 +24,8 @@ Vc = -(Rtm1*Vtm1 + Rtm2*Vtm2)/Rtm
 
 #additional maneuver
     #optionally choose a parameterized maneuver
-def XNt(T,G,P):
-    return 32.2*G*(np.cos(np.pi/P * T)**1)
+#def XNt(T,G,P):
+#    return 32.2*G*(np.cos(np.pi/P * T)**1)
     #if (T//(2*P)) > (P/2): return G*32.2
     #else: return -G*32.2
 #Data
@@ -73,8 +73,8 @@ while Vc > 0:
         #Target Maneuver
     Vt1 = Vt* np.cos(np.pi - Beta)
     Vt2 = Vt * np.sin(Beta)
-    BetaD = XNt(T,8,2) / Vt
-    #BetaD = XNt / Vt
+    #BetaD = XNt(T,8,2) / Vt
+    BetaD = XNt / Vt
 
     #Block 66
         #Updating differentials
@@ -110,8 +110,8 @@ while Vc > 0:
         #Target Maneuver
     Vt1 = Vt* np.cos(np.pi - Beta)
     Vt2 = Vt * np.sin(Beta)
-    BetaD = XNt(T,8,2) / Vt
-    #BetaD = XNt / Vt
+    #BetaD = XNt(T,8,2) / Vt
+    BetaD = XNt / Vt
 
     #Block 55
         #Runge kutta
@@ -174,3 +174,4 @@ figManager.window.showMaximized()
 fig.set_tight_layout(True)
 plt.show()
 
+#Many simulations are possible, and the figures in the book can be generated to look Identical aswell
