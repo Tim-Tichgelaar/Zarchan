@@ -73,8 +73,8 @@ while Vc > 0:
         #Target Maneuver
     Vt1 = Vt* np.cos(np.pi - Beta)
     Vt2 = Vt * np.sin(Beta)
-    BetaD = XNt(T,8,2) / Vt
-    #BetaD = XNt / Vt
+    #BetaD = XNt(T,8,2) / Vt
+    BetaD = XNt / Vt
 
     #Block 66
         #Updating differentials
@@ -110,8 +110,8 @@ while Vc > 0:
         #Target Maneuver
     Vt1 = Vt* np.cos(np.pi - Beta)
     Vt2 = Vt * np.sin(Beta)
-    BetaD = XNt(T,8,2) / Vt
-    #BetaD = XNt / Vt
+    #BetaD = XNt(T,8,2) / Vt
+    BetaD = XNt / Vt
 
     #Block 55
         #Runge kutta
