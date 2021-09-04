@@ -1,0 +1,6 @@
+Listing 2.2 is the linearized version of listing 2.1.
+
+It takes the nonlinear simulation and makes simplifications such as small angle approximations and parameterizes the engagement with vertical separation.
+This take is numerically more efficient but more importantly allows for later tricks using adjoint theory.
+
+The accompanying script takes this code and compares the linearized graph to the nonlinear one as in Figure 2.7
