@@ -1,4 +1,5 @@
 Listing 1.1 is a sample Runge-Kutta second order integration; the python script has both the original and some related functions to graph both the results and thier errors.
+The listing is designed to explore the accuracy of the runge kutta method and how it tends to generate error
 
 The Integrator Functions take the arguments (W,T,Tf,Sc,Y,YD,X,H), where
 					       W = Omega, the angular rate of the function
