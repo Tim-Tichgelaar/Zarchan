@@ -151,6 +151,6 @@ def error(H1,H2,H3):
     plt.plot(t,(np.array(E)/.05*100),Label=('RK'+str(H3)))
     plt.legend(loc='best')
     plt.show()
-plot(.001,.001,.001)
+error(.001,.01,.001)
 
 #RungeKutta(20,0,1,.1,0,0,1,.01)
